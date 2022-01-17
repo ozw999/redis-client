@@ -10,6 +10,9 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>jmh</module>
+        <module>jedis</module>
+        <module>lettuce</module>
+        <module>redisson</module>
     </modules>
 
     <properties>
@@ -17,4 +20,28 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <!--      jmh      -->
+            <dependency>
+                <groupId>org.openjdk.jmh</groupId>
+                <artifactId>jmh-core</artifactId>
+                <version>1.21</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openjdk.jmh</groupId>
+                <artifactId>jmh-generator-annprocess</artifactId>
+                <version>1.21</version>
+            </dependency>
+
+            <!--      jedis      -->
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>2.9.0</version>
+                <!--<version>2.9.3</version>-->
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
 </project>
